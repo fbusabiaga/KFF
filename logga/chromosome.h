@@ -2,7 +2,7 @@
 #define _CHROMOSOME_H_
 
 #include "group.h"
-#include <vector.h>
+#include <vector>
 
 using namespace std;
 

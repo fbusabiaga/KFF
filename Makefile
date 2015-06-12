@@ -35,16 +35,20 @@ PROGRAM = run
 CC = g++
 
 #FLAGS
-FLAGS  = -O3 -std=c++98
+FLAGS  = -O4 -std=c++98
+
+#Includes
+INCLUDECC  = -L/usr/lib64/
+INCLUDECPP = -L/usr/lib64/
 
 # OBJECT FILES
 # args.o to utils.o LOGGA files || aux.o to translator.o translators files
-OBJS  = args.o                   \      
-        chromosome.cc 			 \
+OBJS  = args.o                   \
+        chromosome.cc 		 \
         fitness.o                \
-        getFileArgs.o            \                
+        getFileArgs.o            \
         gga.o                    \
-		graph.o					 \
+	graph.o					 \
         group.o                  \
         header.o                 \
         help.o                   \
@@ -81,11 +85,11 @@ VPATH = logga 				\
 
 ######################
 .cc.o:
-        $(CC) -c $(FLAGS) $?
+	$(CC) -c $(FLAGS) $(INCLUDECC) $?
 .cpp.o:
-        $(CC) -c $(FLAGS) $?
+	$(CC) -c $(FLAGS) $(INCLUDECPP) $?
 .CPP.o:
-        $(CC) -c $(FLAGS) $? 
+	$(CC) -c $(FLAGS) $(INCLUDECPP) $? 
 
 ######################
 all: $(OBJS)

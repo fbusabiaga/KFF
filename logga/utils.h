@@ -12,7 +12,8 @@ int PrintSpaces(FILE *out, int num);
 /* Exit function to handle fatal errors*/
 inline void err_exit()
 {
-    printf("[Fatal Error]: %s \nExiting...\n", errorMsg);
+    //printf("[Fatal Error]: %s \nExiting...\n", errorMsg);
+    printf("[Fatal Error]:  \nExiting...\n");
     exit(1);
 }
 

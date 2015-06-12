@@ -7,8 +7,6 @@
 #define MAXOPTIMAL_TERMINATION      3
 #define OPTIMUMFOUND_TERMINATION    4
 
-#include "population.h"
-
 typedef struct {
 
   long N;                      // population size
@@ -37,9 +35,10 @@ typedef struct {
 
 // ---------------------------------------
 
+#include "population.h"
 
-int GGA(Params *params);
-int TerminationCriteria(GGAParams *params);
+
+int GGA(GGAParams *params);
 int Selection(GGAParams *params);
 int GenerateOffspring(Population *parents, Population *offspring, GGAParams *params);
 int Pause(GGAParams *params);
@@ -49,4 +48,7 @@ FILE *GetLogFile();
 FILE *GetModelFile();
 FILE *GetFitnessFile();
 
+
+
 #endif
+

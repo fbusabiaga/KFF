@@ -50,6 +50,11 @@
 
 #define numFitness 3
 
+FitnessFunction roofline;
+FitnessFunction simplemodel;
+FitnessFunction complexmodel;
+IsBest          bestSolution;
+
 static Fitness fitnessDesc[numFitness] = {
   {"Roofline Model",&roofline,&bestSolution,NULL,NULL},
   {"Simple Model",&simplemodel,&bestSolution,NULL,NULL},
@@ -100,7 +105,7 @@ int InitializeFitness(GGAParams *ggaParams)
   return 0;
 }
 
-int DoneFitness(GGAParams *ggaParams)
+int doneFitness(GGAParams *ggaParams)
 {
   if (fitness->done)
     return fitness->done(ggaParams);

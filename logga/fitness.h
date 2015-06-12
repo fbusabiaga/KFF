@@ -10,7 +10,6 @@ typedef int   DoneFitness(GGAParams *ggaParams);
 
 typedef struct {
   char            *description;
-
   FitnessFunction *fitness;
   IsBest          *isBest;
   InitFitness     *init;
@@ -25,7 +24,7 @@ int  SetFitness(int n);
 char *GetFitnessDesc(int n);
 
 int InitializeFitness(GGAParams *ggaParams);
-int DoneFitness(GGAParams *ggaParams);
+int doneFitness(GGAParams *ggaParams);
 double GetFitnessValue(char *x, int n);
 int IsBestDefined();
 int IsOptimal(char *x, int n);

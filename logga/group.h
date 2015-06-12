@@ -1,7 +1,7 @@
 #ifndef _GROUP_H_
 #define _GROUP_H_
 
-#include <vector.h>
+#include <vector> 
 #define true 1
 #define false 0
 
