@@ -68,7 +68,8 @@ Fitness *fitness;
 long   fitnessCalls_;
 
 
-char BestSolution(Chromosome *chromosome)
+//char BestSolution(Chromosome *chromosome)
+char BestSolution(char *x, int n)
 {
   register int i;
 
@@ -113,7 +114,8 @@ int doneFitness(GGAParams *ggaParams)
   return 0;
 }
 
-float GetFitnessValue(Chromosome *chromosome) 
+//float GetFitnessValue(Chromosome *chromosome) 
+double GetFitnessValue(char *x, int n)
 {
   fitnessCalled();
   return fitness->fitness(x,n);
