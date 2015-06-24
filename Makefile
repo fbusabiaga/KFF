@@ -35,7 +35,8 @@ PROGRAM = run
 CC = g++
 
 #FLAGS
-FLAGS  = -O4 -std=c++98
+#FLAGS  = -O4 -std=c++98
+FLAGS = -O4 -std=c++11
 
 #Includes
 INCLUDECC  = -L/usr/lib64/

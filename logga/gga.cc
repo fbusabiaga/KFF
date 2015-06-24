@@ -42,63 +42,63 @@ int GGA(GGAParams *ggaParams)
   int        terminationReason;
 
   // initialize the poplulation according to parameters
-  population.initialize(ggaParams);
+  population.Initialize(ggaParams);
 
   // randomly generate first population according to uniform distribution
-  population.generatePopulation();
+  population.GeneratePopulation();
 
   // evaluate first population
-  population.evaluatePopulation();
+  population.EvaluatePopulation();
 
   // main loop
   t=0;
 
   // compute basic statistics on initial population
-  computeBasicStatistics(&populationStatistics,t,&population,ggaParams);
+  ComputeBasicStatistics(&populationStatistics,t,&population,ggaParams);
 
   // output the statistics on first generation
-  generationStatistics(stdout,&populationStatistics);
-  generationStatistics(logFile,&populationStatistics);
-  fitnessStatistics(fitnessFile,&populationStatistics);
+  GenerationStatistics(stdout,&populationStatistics);
+  GenerationStatistics(logFile,&populationStatistics);
+  FitnessStatistics(fitnessFile,&populationStatistics);
 
   // pause after statistics?
-  pause(ggaParams);
+  Pause(ggaParams);
 
-  while (!(terminationReason=terminationCriteria(ggaParams)))
+  while (!(terminationReason=TerminationCriteria(ggaParams)))
     {
       // perform truncation (block) selection
-      selectTheBest(&population,&parents,ggaParams);
+      SelectTheBest(&population,&parents,ggaParams);
 
       // create offspring
-      generateOffspring(t,&parents,&offspring,ggaParams);
+      GenerateOffspring(&parents,&offspring,ggaParams);
       
       // evaluate the offspring
-      offspring.evaluatePopulation();
-
+      offspring.EvaluatePopulation();
+      
       // replace the worst of the population with offspring
-      replaceWorst(&population,&offspring);
+      ReplaceWorst(&population,&offspring);
       
       // increase the generation number
   
       t++;
 
       // compute basic statistics
-      computeBasicStatistics(&populationStatistics,t,&population,ggaParams);
+      ComputeBasicStatistics(&populationStatistics,t,&population,ggaParams);
 
       // output the statistics on current generation
-      generationStatistics(stdout,&populationStatistics);
-      generationStatistics(logFile,&populationStatistics);
-      fitnessStatistics(fitnessFile,&populationStatistics);
+      GenerationStatistics(stdout,&populationStatistics);
+      GenerationStatistics(logFile,&populationStatistics);
+      FitnessStatistics(fitnessFile,&populationStatistics);
 
       // pause after statistics?
-      pause(ggaParams);
+      Pause(ggaParams);
     };
 
   // print out final statistics
-  computeBasicStatistics(&populationStatistics,t,&population,ggaParams);
+  ComputeBasicStatistics(&populationStatistics,t,&population,ggaParams);
   
-  finalStatistics(stdout,terminationReasonDescription[terminationReason],&populationStatistics);
-  finalStatistics(logFile,terminationReasonDescription[terminationReason],&populationStatistics);
+  FinalStatistics(stdout,terminationReasonDescription[terminationReason],&populationStatistics);
+  FinalStatistics(logFile,terminationReasonDescription[terminationReason],&populationStatistics);
   
   return 0;
 }
@@ -118,8 +118,8 @@ int TerminationCriteria(GGAParams *ggaParams)
 
   // check if should terminate if optimum has been found and if this is the case if yes
   if ((!result)&&(ggaParams->stopWhenFoundOptimum))
-    if (isBestDefined())
-      result = (isOptimal(populationStatistics.bestX,populationStatistics.n))? OPTIMUMFOUND_TERMINATION:0;
+    if (IsBestDefined())
+      result = (IsOptimal(populationStatistics.bestX,populationStatistics.n))? OPTIMUMFOUND_TERMINATION:0;
 
   // if there's no reason to finish yet and the epsilon threshold was set, check it
   if ((!result)&&(ggaParams->epsilon>=0))
@@ -172,7 +172,7 @@ int Terminate(GGAParams *ggaParams)
 {
   // get rid of the metric
 
-  doneMetric();
+  //doneMetric();
 
   // get rid of the fitness
 
@@ -180,7 +180,7 @@ int Terminate(GGAParams *ggaParams)
 
   // statistics done
 
-  doneBasicStatistics(&populationStatistics);
+  DoneBasicStatistics(&populationStatistics);
 
   // close output streams
 

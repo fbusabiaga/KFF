@@ -20,7 +20,7 @@ int PrintTheHeader(FILE *out)
   fprintf(out," Copyright (c) 2015 HPC Programming Framework Research Team, RIKEN Advanced Institute for Computational Science\n");
   fprintf(out," Author: Mohamed Wahib mohamed.attia@riken.jp\n");
   fprintf(out,"-----------------------------------------------\n");
-  fprintf(out," Parameter values from: %s\n",(getParamFilename())? getParamFilename():"(default)");
+  fprintf(out," Parameter values from: %s\n",(GetParamFilename())? GetParamFilename():"(default)");
   fprintf(out,"===============================================\n");
   fprintf(out,"\n");
 

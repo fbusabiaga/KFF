@@ -5,16 +5,16 @@ void AddNode(Node **list, int ID)
 	Node *p = new Node;
 	p->ID   = ID;
 	p->next = *list;
-	list    = p;
+	list    = &p;
 }
 
 int RemoveNode(Node **list, int ID)
 {
 	Node *current = *list;
 	Node *previous = *list;
-	if (*list == NULL)
+	if (*list == nullptr)
 		return -1;
-	while (current->next != NULL)
+	while (current->next != nullptr)
 	{
 		if (current->ID == ID)
 		{

@@ -42,7 +42,6 @@ class Graph
     ~Graph();
     void AddEdge(int src, int dest);
     void DisplayGraph();
-
 };
  
 

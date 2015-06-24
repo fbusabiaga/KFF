@@ -3,7 +3,7 @@
 
 struct Node {
   int ID;
-  node *next;
+  Node *next;
 };
 
 void AddNode(Node **list, int ID);

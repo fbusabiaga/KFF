@@ -158,6 +158,7 @@ int FinalStatistics(FILE *out, char *termination, BasicStatistics *statistics)
   return 0;
 }
 
+/* //Commented by floren
 int PrintModel(FILE *out, long t, AcyclicOrientedGraph *G, FrequencyDecisionGraph **T)
 {
   int i;
@@ -184,7 +185,7 @@ int PrintModel(FILE *out, long t, AcyclicOrientedGraph *G, FrequencyDecisionGrap
 
   return 0;
 }
-
+*/
 
 int PrintGuidance(FILE *out, float *p1, int n, float threshold)
 {

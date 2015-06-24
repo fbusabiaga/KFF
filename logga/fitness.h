@@ -30,7 +30,7 @@ int IsBestDefined();
 int IsOptimal(char *x, int n);
 
 int ResetFitnessCalls(void);
-long FitnessCalled(void);
+long fitnessCalled(void);
 long GetFitnessCalls(void);
 
 #endif

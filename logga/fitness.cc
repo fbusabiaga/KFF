@@ -138,7 +138,7 @@ int ResetFitnessCalls(void)
 }
 
 
-long FitnessCalled(void)
+long fitnessCalled(void)
 {
   return fitnessCalls_++;
 }

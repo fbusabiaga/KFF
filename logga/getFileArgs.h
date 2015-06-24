@@ -22,8 +22,8 @@ typedef struct {
   GetValueDescription *getValueDescription;
 } ParamStruct;
 
-int GetFirstString(FILE *f, char *s);
-int SetParamValue(FILE *f, ParamStruct *param);
+int getFirstString(FILE *f, char *s, void *);
+int setParamValue(FILE *f, ParamStruct *param);
 int GetParamsFromFile(char *filename, ParamStruct params[]);
 int PrintParamsDescription(FILE *out, ParamStruct params[]);
 int PrintParamValues(FILE *out, ParamStruct params[]);

@@ -12,7 +12,7 @@ int Help(char what, ParamStruct *params)
     }
   else
     {
-      printParamsDescription(stdout,params);
+      PrintParamsDescription(stdout,params);
     }
 
   return 0;

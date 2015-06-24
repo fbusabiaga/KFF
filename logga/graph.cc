@@ -19,7 +19,7 @@ Adjlist_node::Adjlist_node(int v)
 }
 
 /*  Fuction to add a node*/
-Adjlist_node* Graph::addNode(int v)
+Adjlist_node* Graph::AddNode(int v)
 {
     Adjlist_node *newNode = new Adjlist_node(v);
     if(!newNode){ 
@@ -64,7 +64,7 @@ Graph::~Graph()
         while (adjListPtr)
         {
             tmp = adjListPtr;
-            adjListPtr = adjListPtr->getNext();
+            adjListPtr = adjListPtr->GetNext();
             delete tmp;
         }
     }
@@ -75,28 +75,28 @@ Graph::~Graph()
 }
  
 /* Adds an edge to a graph*/
-void Graph::addEdge(int src, int dest)
+void Graph::AddEdge(int src, int dest)
 {
     /* Add an edge from src to dst in the adjacency list*/
-    Adjlist_node *newNode = addNode(dest);
-    newNode->setNext(this->adjListArr[src].head);
+    Adjlist_node *newNode = AddNode(dest);
+    newNode->SetNext(this->adjListArr[src].head);
     this->adjListArr[src].head = newNode;
     this->adjListArr[src].num_members++;
  
 }
  
 /* Function to print the adjacency list of graph*/
-void Graph::displayGraph()
+void Graph::DisplayGraph()
 {
     Adjlist_node *adjListPtr = new Adjlist_node;
     for (int i = 0; i < this->numVertices; i++)
     {
-        adjListPtr = this->AdjListArr[i].head;
+        adjListPtr = this->adjListArr[i].head;
         printf("\n%d: ", i);
         while (adjListPtr)
         {
-            printf("%d->", adjListPtr->getID());
-            adjListPtr = adjListPtr->getNext();
+            printf("%d->", adjListPtr->GetID());
+            adjListPtr = adjListPtr->GetNext();
         }
         printf("NULL\n");
     }

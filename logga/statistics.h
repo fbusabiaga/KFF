@@ -6,7 +6,7 @@
 #include "population.h"
 #include "gga.h"
 #include "graph.h"
-#include "frequencyDecisionGraph.h"
+//#include "frequencyDecisionGraph.h"
 
 // ----------------
 // basic statistics
@@ -29,12 +29,12 @@ typedef struct {
 
 int IntializeBasicStatistics(BasicStatistics *statistics, GGAParams *ggaParams);
 int DoneBasicStatistics(BasicStatistics *statistics);
-int ComputeBasicStatistics(BasicStatistics *statistics, long t, Population *population, GGAAParams *ggaParams);
+int ComputeBasicStatistics(BasicStatistics *statistics, long t, Population *population, GGAParams *ggaParams);
 
 int GenerationStatistics(FILE *out, BasicStatistics *statistics);
 int FitnessStatistics(FILE *out, BasicStatistics *statistics);
 int FinalStatistics(FILE *out, char *termination, BasicStatistics *statistics);
-int PrintModel(FILE *out, long t, AcyclicOrientedGraph *G, FrequencyDecisionGraph **T);
+//////int PrintModel(FILE *out, long t, AcyclicOrientedGraph *G, FrequencyDecisionGraph **T);
 int PrintGuidance(FILE *out, float *p1, int n, float treshold);
 
 #endif

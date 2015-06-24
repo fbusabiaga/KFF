@@ -31,6 +31,8 @@ typedef struct {
 
   long randSeed;               // random seed
 
+  float epsilon;
+
 } GGAParams;
 
 // ---------------------------------------
@@ -47,7 +49,7 @@ int Terminate(GGAParams *params);
 FILE *GetLogFile();
 FILE *GetModelFile();
 FILE *GetFitnessFile();
-
+int TerminationCriteria(GGAParams *ggaParams);
 
 
 #endif
